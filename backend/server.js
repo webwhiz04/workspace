@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
+import fs from "fs";
 import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import productRoutes from "./routes/products.js";
@@ -15,6 +16,11 @@ const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.join(__dirname, ".env") });
 
 const clientOrigin = process.env.CLIENT_ORIGIN || "http://localhost:5173";
+const uploadsDir = path.join(__dirname, "uploads");
+
+if (!fs.existsSync(uploadsDir)) {
+    fs.mkdirSync(uploadsDir, { recursive: true });
+}
 
 const app = express();
 const PORT = Number(process.env.PORT) || 5000;
@@ -26,8 +32,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-app.use("/uploads", express.static(path.resolve("uploads")));
+app.use("/uploads", express.static(uploadsDir));
 
 mongoose.connect(process.env.MONGO_URI)
     .then(async () => {
@@ -48,6 +53,10 @@ app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/userdata", userDataRoutes);
 app.use("/api/payment", paymentRoutes);
+
+app.get("/", (_req, res) => {
+    return res.status(200).json({ message: "Backend is running" });
+});
 
 app.use((req, res) => {
     return res.status(404).json({ message: `Cannot ${req.method} ${req.originalUrl}` });
