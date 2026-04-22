@@ -14,10 +14,12 @@ const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.join(__dirname, ".env") });
 
+const clientOrigin = process.env.CLIENT_ORIGIN || "http://localhost:5173";
+
 const app = express();
 const PORT = Number(process.env.PORT) || 5000;
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: clientOrigin,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true,
