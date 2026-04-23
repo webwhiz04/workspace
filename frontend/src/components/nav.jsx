@@ -13,13 +13,13 @@ import { FaWandMagicSparkles } from "react-icons/fa6";
 import { GiLargeDress } from "react-icons/gi";
 import { IoIosSearch } from "react-icons/io";
 import { TfiLocationPin } from "react-icons/tfi";
-import "./nav.css";
+import "../styles/nav.css";
 import {
     clearLoggedInUser,
     getLoggedInEmail,
     getLoggedInUserDetails,
     isUserLoggedIn,
-} from "./authStorage.js";
+} from "../utils/authStorage.js";
 
 function Nav() {
     const navigate = useNavigate();

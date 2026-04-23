@@ -2,11 +2,11 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './index.css'
 import App from './App.jsx'
-import Admin from "./components/admin.jsx";
-import AdminDashboard from "./components/admindashboard.jsx";
-import AddProduct from "./components/addproduct.jsx";
-import ViewProduct from "./components/viewproduct.jsx";
-import AdminUserOrders from "./components/adminuserorders.jsx";
+import Admin from "./pages/admin.jsx";
+import AdminDashboard from "./pages/admindashboard.jsx";
+import AddProduct from "./pages/addproduct.jsx";
+import ViewProduct from "./pages/viewproduct.jsx";
+import AdminUserOrders from "./pages/adminuserorders.jsx";
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter>
