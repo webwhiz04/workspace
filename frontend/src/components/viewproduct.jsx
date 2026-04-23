@@ -4,7 +4,8 @@ import AddProduct from "./addproduct.jsx";
 import getImageUrl from "./imageUrl.js";
 import "./view.css";
 
-const API_URL = "http://localhost:5000/api/products";
+const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_URL = `${BASE_URL}/api/products`;
 
 const callApi = (path = "", options = {}) => fetch(`${API_URL}${path}`, options);
 

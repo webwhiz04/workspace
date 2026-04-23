@@ -15,12 +15,6 @@ const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.join(__dirname, ".env") });
 
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://localhost:5173",
-  "http://localhost:3000",
-  "https://zeptoclone.vercel.app"
-];
 
 const clientOrigin = process.env.CLIENT_ORIGIN || "http://localhost:5173";
 const uploadsDir = path.join(__dirname, "uploads");

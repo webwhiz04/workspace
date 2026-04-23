@@ -5,7 +5,8 @@ import { TiDeleteOutline } from "react-icons/ti";
 
 import "./login.css";
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "/api/auth";
+const API_BASE_URL = `${import.meta.env.VITE_API_BASE_URL}/api/auth`;
+
 const isValidEmail = (email) => /\S+@\S+\.\S+/.test(email);
 
 function Login() {

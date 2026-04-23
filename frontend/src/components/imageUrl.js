@@ -1,10 +1,11 @@
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 const getImageUrl = (imagePath) => {
     if (!imagePath) return "";
 
     const normalizedPath = String(imagePath).trim().replace(/\\/g, "/");
 
+    // if already full URL (cloud/CDN)
     if (/^https?:\/\//i.test(normalizedPath)) {
         return normalizedPath;
     }
