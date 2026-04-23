@@ -21,7 +21,13 @@ const __dirname = path.dirname(__filename);
 connectDB();
 
 const clientOrigin = process.env.CLIENT_ORIGIN || "http://localhost:5173";
-const allowedOrigins = [clientOrigin, "http://127.0.0.1:5173"];
+const allowedOrigins = [
+  clientOrigin,
+  "http://127.0.0.1:5173",
+  "https://zeptoclone.vercel.app",
+  "https://zeptoclone-git-main-preethampoojary443s-projects.vercel.app"
+];
+
 const uploadsDir = path.join(__dirname, "uploads");
 
 if (!fs.existsSync(uploadsDir)) {
@@ -39,10 +45,10 @@ app.use(
   })
 );
 
-// Rate Limiting
+// Rate Limiting (Increased for production)
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  max: 1000, // Increased to 1000 for better production experience
   message: "Too many requests from this IP, please try again after 15 minutes",
 });
 app.use("/api/", limiter);
@@ -50,9 +56,15 @@ app.use("/api/", limiter);
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin)) {
+      // Allow requests with no origin (like mobile apps or curl requests)
+      if (!origin) return callback(null, true);
+      
+      const isAllowed = allowedOrigins.some(allowed => origin.startsWith(allowed));
+      
+      if (isAllowed) {
         callback(null, true);
       } else {
+        console.error(`CORS Error: Origin ${origin} not allowed`);
         callback(new Error("Not allowed by CORS"));
       }
     },
@@ -89,6 +101,7 @@ app.use((error, _req, res, _next) => {
   const message = error.message || "Internal server error";
   return res.status(status).json({
     message,
+    error: process.env.NODE_ENV === "production" ? "Internal Server Error" : message,
     stack: process.env.NODE_ENV === "production" ? null : error.stack,
   });
 });
