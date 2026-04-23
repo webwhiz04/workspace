@@ -1,0 +1,143 @@
+.otp {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.otpcont {
+    width: 850px;
+    min-height: 500px;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px #3f3e3e;
+    background: #fff;
+    position: relative;
+}
+
+
+.otpleft {
+    flex: 1;
+    background: linear-gradient(135deg, #7b1fa2, #ba68c8);
+    color: white;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.otpright {
+    flex: 1;
+    background: linear-gradient(.25turn, rgb(192, 144, 198), 20%, rgb(253, 251, 253));
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.otpclose {
+    position: absolute;
+    top: 14px;
+    right: 16px;
+    color: #6f00c9;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.otpphone {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.otpheading {
+    text-align: center;
+    font-size: 30px;
+    color: #9500ff;
+    font-weight: bold;
+}
+
+.otpright p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.otpimg {
+    width: 200px;
+    margin-left: 50px;
+}
+
+.otpappbtn {
+    margin: 10px 0;
+}
+
+
+.otpin {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.otpinput {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 22px;
+    border: none;
+    outline: none;
+}
+
+
+.otptimer {
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+.resend {
+    margin-top: 12px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+    align-self: flex-start;
+    padding: 0;
+}
+
+.resend:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.otpbtn {
+    margin-top: 25px;
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #ff4f8b;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.otpbtn:hover {
+    background: #ff2e74;
+}
+
+.otpbtn:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+}

@@ -1,0 +1,283 @@
+.orderpage {
+    margin-top: 170px;
+    min-height: calc(100vh - 170px);
+    background: linear-gradient(150deg, #fff9f0 0%, #f7f0ff 45%, #eef9ff 100%);
+    padding: 24px 16px 40px;
+}
+
+.order {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+}
+
+.orderheader {
+    background: #ffffff;
+    border: 1px solid #e8dcce;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.orderheader h1 {
+    margin: 0;
+    font-size: 1.35rem;
+    color: #2f1d0e;
+}
+
+.addaddress {
+    border: 1px solid #d1832f;
+    background: #fff4ea;
+    color: #8b4a06;
+    border-radius: 999px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.loading {
+    margin: 0;
+    background: #fff;
+    border: 1px solid #e8dcce;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.address,
+.ordersummary {
+    background: #fff;
+    border: 1px solid #e8dcce;
+    border-radius: 14px;
+    padding: 18px;
+}
+
+.address h2,
+.ordersummary h2 {
+    margin: 0 0 14px;
+    color: #2f1d0e;
+    font-size: 1.05rem;
+}
+
+.savedaddress {
+    display: grid;
+    gap: 10px;
+}
+
+.radio {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    border: 1px solid #efe3d3;
+    border-radius: 10px;
+    padding: 10px 12px;
+    background: #fffdf9;
+    cursor: pointer;
+}
+
+.radio input {
+    margin-top: 4px;
+}
+
+.addresscard {
+    display: grid;
+    gap: 2px;
+    color: #5f5145;
+}
+
+.addresscard span:first-child {
+    font-weight: 700;
+    color: #2f1d0e;
+}
+
+.addressform {
+    display: grid;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.addressformbutton {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.cancel,
+.save {
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.cancel {
+    background: #efe6dc;
+    color: #4f3d2f;
+}
+
+.save {
+    background: #1f7a4f;
+    color: #fff;
+}
+
+.save:disabled,
+.cancel:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.addressform input {
+    border: 1px solid #d8c6b2;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 0.95rem;
+}
+
+.emptyaddress {
+    margin: 12px 0 0;
+    color: #7a5f49;
+    font-size: 0.95rem;
+}
+
+.orderitems {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.itemrow,
+.orderbill,
+.ordertotal {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.itemrow {
+    align-items: center;
+    border: 1px solid #f0e4d5;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.itemimage {
+    width: 56px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #eadfce;
+    flex: 0 0 auto;
+}
+
+.itemdetails {
+    display: grid;
+    gap: 4px;
+    flex: 1;
+    min-width: 0;
+}
+
+.itemname {
+    font-weight: 600;
+    color: #2f1d0e;
+}
+
+.itemmeta {
+    color: #6b5b4d;
+    font-size: 0.92rem;
+}
+
+.orderbill {
+    color: #5d4a39;
+    margin-bottom: 6px;
+}
+
+.ordertotal {
+    font-weight: 700;
+    border-top: 1px solid #eadfce;
+    margin-top: 10px;
+    padding-top: 10px;
+    color: #2f1d0e;
+}
+
+.paymentchoice {
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+}
+
+.paymentchoice h3 {
+    margin: 0;
+    color: #2f1d0e;
+    font-size: 1rem;
+}
+
+.paymentoption {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    border: 1px solid #e9dccb;
+    background: #fffdf9;
+    cursor: pointer;
+}
+
+.paymentoption.selected {
+    border-color: rgba(31, 122, 79, 0.45);
+    background: #f1fbf5;
+}
+
+.paymentoption input {
+    margin-top: 3px;
+}
+
+.paymentoption span {
+    display: grid;
+    gap: 4px;
+}
+
+.paymentoption strong {
+    color: #2f1d0e;
+}
+
+.paymentoption small {
+    color: #6b5b4d;
+    font-size: 0.9rem;
+}
+
+.orderfinal {
+    margin-top: 16px;
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+    padding: 12px;
+    background: #1f7a4f;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.orderfinal:disabled {
+    background: #98bca9;
+    cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+    .orderpage {
+        margin-top: 150px;
+        min-height: calc(100vh - 150px);
+    }
+
+    .orderheader {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .addaddress {
+        width: 100%;
+    }
+}

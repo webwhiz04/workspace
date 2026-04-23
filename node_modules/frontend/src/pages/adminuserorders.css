@@ -1,0 +1,218 @@
+.adminuserspage {
+    min-height: 100vh;
+    padding: 120px 16px 40px;
+    background:
+        radial-gradient(circle at top left, rgba(145, 18, 208, 0.12), transparent 30%),
+        radial-gradient(circle at top right, rgba(31, 122, 79, 0.12), transparent 28%),
+        linear-gradient(150deg, #f8fbff 0%, #fff8f1 55%, #f4f6ff 100%);
+}
+
+.adminuserswrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    gap: 16px;
+}
+
+.adminusersheader,
+.adminuserscard {
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid #e7dfd4;
+    border-radius: 18px;
+    box-shadow: 0 18px 42px rgba(47, 29, 14, 0.06);
+}
+
+.adminusersheader {
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.adminuserseyebrow {
+    margin: 0 0 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #8b4a06;
+    font-weight: 700;
+    font-size: 0.78rem;
+}
+
+.adminusersheader h1 {
+    margin: 0;
+    color: #2f1d0e;
+}
+
+.adminusersheader p {
+    margin: 8px 0 0;
+    color: #6b5b4d;
+    line-height: 1.5;
+}
+
+.refreshbtn,
+.savestatusbtn {
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.refreshbtn {
+    background: #efe6dc;
+    color: #4f3d2f;
+}
+
+.adminuserserror {
+    margin: 0;
+    padding: 14px 16px;
+    border-radius: 14px;
+    background: #fff1f1;
+    border: 1px solid #f7c7c7;
+    color: #b42318;
+    font-weight: 600;
+}
+
+.adminuserscard {
+    padding: 18px;
+}
+
+.adminuserscard.emptystate {
+    color: #6b5b4d;
+}
+
+.orderemail {
+    display: inline-block;
+    color: #8b4a06;
+    font-weight: 700;
+}
+
+.statuspill {
+    display: inline-flex;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: #f1fbf5;
+    color: #1f7a4f;
+    font-weight: 700;
+    font-size: 0.84rem;
+    border: 1px solid rgba(31, 122, 79, 0.18);
+    white-space: nowrap;
+}
+
+.savestatusbtn {
+    background: #1f7a4f;
+    color: #fff;
+    min-width: 80px;
+    padding: 9px 12px;
+}
+
+.tablecard {
+    padding: 0;
+    overflow: hidden;
+}
+
+.tablewrap {
+    overflow-x: auto;
+}
+
+.ordersdatatable {
+    width: 100%;
+    min-width: 1200px;
+    border-collapse: collapse;
+}
+
+.ordersdatatable thead th {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #f8efe5;
+    color: #4f3d2f;
+    text-align: left;
+    font-size: 0.82rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 14px 12px;
+    border-bottom: 1px solid #ecdccc;
+}
+
+.ordersdatatable tbody td {
+    padding: 14px 12px;
+    vertical-align: top;
+    border-bottom: 1px solid #f0e4d5;
+}
+
+.ordersdatatable tbody tr:nth-child(even) {
+    background: rgba(248, 238, 225, 0.33);
+}
+
+.cellstack {
+    display: grid;
+    gap: 4px;
+}
+
+.cellmeta {
+    color: #6b5b4d;
+    font-size: 0.9rem;
+    line-height: 1.35;
+}
+
+.productslist {
+    display: grid;
+    gap: 8px;
+    min-width: 260px;
+}
+
+.productrow {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.productrow img {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    object-fit: cover;
+    border: 1px solid #eadfce;
+}
+
+.statusactions {
+    display: grid;
+    gap: 8px;
+    min-width: 170px;
+}
+
+.statusactions select {
+    border: 1px solid #d8c6b2;
+    border-radius: 10px;
+    padding: 9px 10px;
+    font-size: 0.9rem;
+    background: #fff;
+}
+
+@media (max-width: 840px) {
+    .adminuserswrap {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .adminuserspage {
+        padding-top: 100px;
+    }
+
+    .adminusersheader {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ordersdatatable {
+        min-width: 1020px;
+    }
+
+    .refreshbtn {
+        width: 100%;
+    }
+}
